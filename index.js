@@ -17,7 +17,7 @@ app.use('/pet', petsRoute);
 
 async function init() {
   try {
-    const connection = await mongoose.connect(process.env.MONGO, { dbName: "PetAdoption" });
+    const connection = await mongoose.connect(process.env.MONGODB_URI, { dbName: "PetAdoption" });
     if (connection.connections[0].host) {
       console.log('Connected to DB');
       app.listen(PORT, () => {
