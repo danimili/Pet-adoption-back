@@ -32,4 +32,4 @@ async function init() {
 
 init()
 
-module.exports = { app };
+module.exports = app;
