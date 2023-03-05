@@ -4,7 +4,6 @@ require('dotenv').config();
 const usersRoute = require("./routes/UsersRoutes");
 const petsRoute = require("./routes/PetsRoute");
 const mongoose = require('mongoose');
-const morgan = require("morgan");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -17,7 +16,7 @@ app.use('/pet', petsRoute);
 
 async function init() {
   try {
-    const connection = await mongoose.connect(process.env.MONGODB_URI, { dbName: "PetAdoption" });
+    const connection = await mongoose.connect(process.env.MONGO, { dbName: "PetAdoption" });
     if (connection.connections[0].host) {
       console.log('Connected to DB');
       app.listen(PORT, () => {

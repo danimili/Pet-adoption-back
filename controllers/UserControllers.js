@@ -43,7 +43,7 @@ const login = (req, res) => {
       } else {
         // const token = jwt.sign({ id: user.id, admin: user.role }, process.env.TOKEN_KEY, { expiresIn: '1h' });
       const token = user.generateToken()
-        console.log('TOKEN', token);
+        // console.log('TOKEN', token);
         // res.send({ token: token, user: user, userName: user.userName, userSurname: user.userSurname, userPhone: user.userPhone, userEmail: user.userEmail, id: user._id, userBio: user.userBio });
      res.send({user,token})
       }
