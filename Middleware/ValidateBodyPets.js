@@ -1,6 +1,6 @@
 const Ajv = require("ajv");
 const ajv = new Ajv();
-const { doesPetExistModel } = require("../models/petsModels");
+const { doesPetExistModel } = require("../models/PetsModels");
 
 function checkIfPetExists(req, res, next) {
   const { name } = req.body;
